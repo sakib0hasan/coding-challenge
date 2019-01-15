@@ -1,3 +1,21 @@
-<p>
-  tag-results works!
-</p>
+<div>
+    <div class="m-b-36">
+        <button (click)="gotoSearch()" mat-raised-button class="submit-button">Back to search page</button>
+    </div>
+    <div class="m-b-24">
+        <h3 class="m-b-8">Requests</h3>
+        <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="start center">
+            <div class="p-b-4">Sorted by</div>
+            <div fxLayout="row" fxLayoutGap="8px">
+                <button mat-button (click)="sort('view')">Number of views</button>
+                <button mat-button (click)="sort('datetaken')">Date when the photo was taken</button>
+                <button mat-button (click)="sort('dateuploaded')">Date when the photo was uploaded</button>
+            </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+            <div *ngFor="let result of results">
+                <app-tag-card [tag]="result"></app-tag-card>
+            </div>
+        </div>
+    </div>
+</div>

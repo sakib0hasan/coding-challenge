@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-tag-card',
@@ -8,14 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TagCardComponent implements OnInit {
     @Input() tag: any;
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
-        console.log(this.tag)
+        console.log(this.tag);
     }
 
-    searchTag(tag){
+    searchTag(tag) {
         console.log(tag);
+        this.router.navigate(['tag/' + tag]);
     }
 }
