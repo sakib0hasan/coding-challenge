@@ -96,7 +96,12 @@ p {
     cursor: pointer;
 }
 
-app-tag-card{
+app-tag-card {
     width: 300px;
     height: 380px;
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
 }
