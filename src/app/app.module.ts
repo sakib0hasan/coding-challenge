@@ -11,12 +11,14 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/mate
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TagResultsComponent } from './tag-results/tag-results.component';
 import { TagSearchComponent } from './tag-search/tag-search.component';
+import { TagCardComponent } from './tag-card/tag-card.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         TagResultsComponent,
-        TagSearchComponent
+        TagSearchComponent,
+        TagCardComponent
     ],
     imports: [
         BrowserModule,

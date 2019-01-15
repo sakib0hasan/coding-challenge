@@ -1,4 +1,102 @@
-/* You can add global styles to this file, and also import other style files */
-
-
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "styles/helpers";
+
+$primaryColor: #2158CB;
+$deepColor: #253C78;
+$accentColor: #E2A30F;
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    //background: url(../assets/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 50px auto;
+}
+
+.header-text {
+    font-size: 36px;
+}
+
+.primary-color {
+    color: $primaryColor !important;
+}
+
+p {
+    margin: 0;
+}
+
+.searchbox {
+    width: 470px;
+}
+
+.reset-icon {
+    font-size: 24px;
+    color: $primaryColor;
+    position: absolute;
+    left: 20px;
+    top: 18px;
+}
+
+.press-enter {
+    //position: absolute;
+    //right: 10px;
+    //top: 20px;
+    color: #00000066;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 29px;
+}
+
+.clear-icon {
+    position: absolute !important;
+    right: 6px;
+    top: 14px;
+}
+
+.submit-button {
+    height: 38px;
+}
+
+
+.mat-form-field-infix {
+    margin-left: 26px !important;
+}
+
+.mat-form-field-wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gray {
+    color: #b2b2b2;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+app-tag-card{
+    width: 300px;
+    height: 380px;
+}

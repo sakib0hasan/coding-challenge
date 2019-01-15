@@ -1,29 +1,41 @@
 <div>
-    <div>
-        <h1>CodeChallenge</h1>
-        <p>Search for photos with a specific tag with the help of the Flickr API</p>
-    </div>
-
-
-    <div>
-        Search Box
+    <div class="m-b-36">
         <div fxFlex fxLayout="row" fxLayoutAlign="center center">
-            <div class="search-bar" fxFlex>
-                <form (keydown)="keyDownFunction($event)">
-                    <input [(ngModel)]="tag" autocomplete="off" name="q" fxFlex type="text"
-                           placeholder="Start your search here...">
-                </form>
-                <i class="search-icon fa fa-search"></i>
-                <div *ngIf="tag.length > 0" class="press-enter">(Press enter...)</div>
+            <div fxFlex>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" (keydown)="keyDownFunction($event)">
+                    <div class="position-relative">
+                        <mat-form-field appearance="outline" class="searchbox">
+                            <mat-label>Please enter a tag</mat-label>
+                            <input [(ngModel)]="tag" autocomplete="off" name="tag" matInput placeholder="">
+                        </mat-form-field>
+                        <button (click)="clearSearchBox()" mat-icon-button class="clear-icon">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <i class="search-icon fa fa-search"></i>
+                    </div>
+                    <button (click)="search()" mat-raised-button class="submit-button">Submit</button>
+                </div>
+                <div>
+                    <!--Error: Please -->
+                </div>
             </div>
         </div>
     </div>
-
-    <div>
-        Requests
-
-        <div *ngFor="let result of results">
-            <img [src]="result['url_q']"/>
+    <div class="m-b-24">
+        <h3 class="m-b-8">Requests</h3>
+        <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="start center" >
+            <div class="p-b-4">Sorted by</div>
+            <div fxLayout="row" fxLayoutGap="8px">
+                <button mat-button>Number of views</button>
+                <button mat-button>Date when the photo was taken</button>
+                <button mat-button>Date when the photo was uploaded</button>
+            </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+            <div *ngFor="let result of results">
+                <app-tag-card [tag]="result"></app-tag-card>
+            </div>
         </div>
     </div>
 </div>
+

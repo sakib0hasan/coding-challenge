@@ -1,0 +1,26 @@
+<div class="tag-card">
+    <div class="position-relative">
+        <img class="tag-card-photo" [src]="tag['url_q']" />
+        <div class="tag-number">{{tag['pages']}}</div>
+    </div>
+
+    <div fxLayout="column">
+        <h2 class="text-center m-b-24 m-t-24">{{tag['ownername']}}</h2>
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="m-b-24">
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+                <div class="sub-title text-gray">Uploaded</div>
+                <div>{{tag['dateupload'] | date:'dd.MM.yyyy' }}</div>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+                <div class="sub-title text-gray">Taken</div>
+                <div>{{tag['datetaken'] | date:'dd.MM.yyyy'}}</div>
+            </div>
+        </div>
+        <div class="text-center text-gray clickable" (click)="searchTag(tag['tag'])">
+            Show all images
+        </div>
+    </div>
+    <div class="search-tag clickable" (click)="searchTag(tag['tag'])">
+        SEARCH TAG
+    </div>
+</div>
