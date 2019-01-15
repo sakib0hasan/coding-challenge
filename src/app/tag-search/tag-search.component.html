@@ -1,0 +1,29 @@
+<div>
+    <div>
+        <h1>CodeChallenge</h1>
+        <p>Search for photos with a specific tag with the help of the Flickr API</p>
+    </div>
+
+
+    <div>
+        Search Box
+        <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <div class="search-bar" fxFlex>
+                <form (keydown)="keyDownFunction($event)">
+                    <input [(ngModel)]="tag" autocomplete="off" name="q" fxFlex type="text"
+                           placeholder="Start your search here...">
+                </form>
+                <i class="search-icon fa fa-search"></i>
+                <div *ngIf="tag.length > 0" class="press-enter">(Press enter...)</div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        Requests
+
+        <div *ngFor="let result of results">
+            <img [src]="result['url_q']"/>
+        </div>
+    </div>
+</div>
